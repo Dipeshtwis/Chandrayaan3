@@ -26,10 +26,18 @@ describe Chandrayaan3 do
     end
 
     it 'turns 180 degrees to the right as it calls two times' do
-        spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
-        spacecraft.turn_right
-        spacecraft.turn_right
-        expect(spacecraft.direction).to eq('S')
-      end
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
+      spacecraft.turn_right
+      spacecraft.turn_right
+      expect(spacecraft.direction).to eq('S')
+    end
+  end
+
+  describe '#move_backward' do
+    it 'moves backward in the current direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([0, -1, 0])
+    end
   end
 end

@@ -21,4 +21,7 @@ class Chandrayaan3
                  else @direction
                  end
   end
+
+  def move_backward
+  end
 end
