@@ -7,5 +7,8 @@ class Chandrayaan3
   end
 
   def move_forward
+    case @direction
+      when 'N' then @position[1] += 1
+    end
   end
 end
