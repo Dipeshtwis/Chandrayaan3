@@ -13,6 +13,12 @@ class Chandrayaan3
   end
 
   def turn_right
-    
+    @direction = case @direction
+                 when 'N' then 'E'
+                 when 'E' then 'S'
+                 when 'S' then 'W'
+                 when 'W' then 'N'
+                 else @direction
+                 end
   end
 end
