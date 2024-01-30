@@ -64,10 +64,40 @@ describe Chandrayaan3 do
   end
 
   describe '#move_backward' do
-    it 'moves backward in the current direction' do
+    it 'moves backward in the north direction' do
       spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
       spacecraft.move_backward
       expect(spacecraft.position).to eq([0, -1, 0])
+    end
+
+    it 'moves backward in the south direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'S')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([0, 1, 0])
+    end
+
+    it 'moves backward in the east direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'E')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([-1, 0, 0])
+    end
+
+    it 'moves backward in the west direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'W')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([1, 0, 0])
+    end
+
+    it 'moves backward in the up direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'U')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([0, 0, -1])
+    end
+
+    it 'moves backward in the down direction' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'D')
+      spacecraft.move_backward
+      expect(spacecraft.position).to eq([0, 0, 1])
     end
   end
 
