@@ -97,6 +97,24 @@ describe Chandrayaan3 do
       expect(spacecraft.position).to eq([0, 0, 0])
       expect(spacecraft.direction).to eq('S')
     end
+
+    it 'turns to west after rotating up from south' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'S')
+      spacecraft.rotate_up
+      spacecraft.turn_right
+
+      expect(spacecraft.position).to eq([0, 0, 0])
+      expect(spacecraft.direction).to eq('W')
+    end
+
+    it 'turns to north after rotating up from west' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'W')
+      spacecraft.rotate_up
+      spacecraft.turn_right
+
+      expect(spacecraft.position).to eq([0, 0, 0])
+      expect(spacecraft.direction).to eq('N')
+    end
   end
 
   describe '#move_backward' do
