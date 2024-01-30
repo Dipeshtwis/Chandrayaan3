@@ -4,6 +4,8 @@ class Chandrayaan3
   def initialize(position, direction)
     @position = position
     @direction = direction
+
+    @original_direction = direction
   end
 
   def move_forward
@@ -54,6 +56,7 @@ class Chandrayaan3
   end
 
   def rotate_down
+    @original_direction = @direction
     @direction = 'D'
   end
 end
