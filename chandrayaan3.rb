@@ -1,5 +1,5 @@
 class Chandrayaan3
-  attr_accessor :position, :direction
+  attr_accessor :position, :direction, :original_direction
 
   def initialize(position, direction)
     @position = position
@@ -49,6 +49,7 @@ class Chandrayaan3
   end
 
   def rotate_up
+    @original_direction = @direction
     @direction = 'U'
   end
 
