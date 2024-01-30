@@ -5,4 +5,7 @@ class Chandrayaan3
     @position = position
     @direction = direction
   end
+
+  def move_forward
+  end
 end
