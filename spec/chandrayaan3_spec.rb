@@ -173,5 +173,12 @@ describe Chandrayaan3 do
       spacecraft.rotate_down
       expect(spacecraft.direction).to eq('D')
     end
+
+    it 'keep track from which direction spacecraft rotates' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
+      spacecraft.rotate_down
+      expect(spacecraft.direction).to eq('D')
+      expect(spacecraft.original_direction).to eq('N')
+    end
   end
 end
