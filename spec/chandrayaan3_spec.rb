@@ -49,17 +49,35 @@ describe Chandrayaan3 do
   end
 
   describe '#turn_right' do
-    it 'turns the spacecraft 90 degrees to the right' do
+    it 'turns to east from north' do
       spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
       spacecraft.turn_right
       expect(spacecraft.direction).to eq('E')
     end
 
-    it 'turns 180 degrees to the right as it calls two times' do
+    it 'turns to south from north if it turn two times' do
       spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
       spacecraft.turn_right
       spacecraft.turn_right
       expect(spacecraft.direction).to eq('S')
+    end
+
+    it 'turns to west from south' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'S')
+      spacecraft.turn_right
+      expect(spacecraft.direction).to eq('W')
+    end
+
+    it 'turns to south from east' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'E')
+      spacecraft.turn_right
+      expect(spacecraft.direction).to eq('S')
+    end
+
+    it 'turns to north from west' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'W')
+      spacecraft.turn_right
+      expect(spacecraft.direction).to eq('N')
     end
   end
 
