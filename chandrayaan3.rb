@@ -9,6 +9,11 @@ class Chandrayaan3
   def move_forward
     case @direction
       when 'N' then @position[1] += 1
+      when 'S' then @position[1] -= 1
+      when 'E' then @position[0] += 1
+      when 'W' then @position[0] -= 1
+      when 'U' then @position[2] += 1
+      when 'D' then @position[2] -= 1
     end
   end
 
