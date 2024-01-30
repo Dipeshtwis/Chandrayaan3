@@ -55,4 +55,12 @@ describe Chandrayaan3 do
       expect(spacecraft.direction).to eq('S')
     end
   end
+
+  describe '#rotate_up' do
+    it 'rotates the spacecraft upwards' do
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
+      spacecraft.rotate_up
+      expect(spacecraft.direction).to eq('U')
+    end
+  end
 end

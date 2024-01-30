@@ -37,4 +37,7 @@ class Chandrayaan3
                  else @direction
                  end
   end
+
+  def rotate_up
+  end
 end
