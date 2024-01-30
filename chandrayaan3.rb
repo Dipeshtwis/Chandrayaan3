@@ -27,4 +27,7 @@ class Chandrayaan3
       when 'N' then @position[1] -= 1
     end
   end
+
+  def turn_left
+  end
 end
