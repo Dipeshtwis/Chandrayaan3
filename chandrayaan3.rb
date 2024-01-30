@@ -23,5 +23,8 @@ class Chandrayaan3
   end
 
   def move_backward
+    case @direction
+      when 'N' then @position[1] -= 1
+    end
   end
 end
