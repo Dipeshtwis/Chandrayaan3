@@ -39,5 +39,6 @@ class Chandrayaan3
   end
 
   def rotate_up
+    @direction = 'U'
   end
 end
