@@ -43,5 +43,6 @@ class Chandrayaan3
   end
 
   def rotate_down
+    @direction = 'D'
   end
 end
