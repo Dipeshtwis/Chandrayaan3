@@ -18,5 +18,14 @@ describe UserInputHandler do
       expect(spacecraft).to receive(:rotate_up).once
       UserInputHandler.execute_commands(commands, spacecraft)
     end
+
+    it 'executes the given commands on the spacecraft' do
+      spacecraft = double('Chandrayaan3')
+      commands = ['b', 'l', 'd']
+      expect(spacecraft).to receive(:move_backward).once
+      expect(spacecraft).to receive(:turn_left).once
+      expect(spacecraft).to receive(:rotate_down).once
+      UserInputHandler.execute_commands(commands, spacecraft)
+    end
   end
 end
