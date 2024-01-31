@@ -15,6 +15,9 @@ class UserInputHandler
       when 'f' then spacecraft.move_forward
       when 'r' then spacecraft.turn_right
       when 'u' then spacecraft.rotate_up
+      when 'b' then spacecraft.move_backward
+      when 'l' then spacecraft.turn_left
+      when 'd' then spacecraft.rotate_down
     end
   end
 end
