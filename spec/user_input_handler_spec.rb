@@ -8,4 +8,15 @@ describe UserInputHandler do
       expect(commands).to eq(['f', 'r', 'u', 'b', 'l'])
     end
   end
+
+  describe '#execute_commands' do
+    it 'executes the given commands on the spacecraft' do
+      spacecraft = double('Chandrayaan3')
+      commands = ['f', 'r', 'u']
+      expect(spacecraft).to receive(:move_forward).once
+      expect(spacecraft).to receive(:turn_right).once
+      expect(spacecraft).to receive(:rotate_up).once
+      UserInputHandler.execute_commands(commands, spacecraft)
+    end
+  end
 end
