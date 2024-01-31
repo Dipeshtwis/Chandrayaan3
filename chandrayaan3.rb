@@ -42,13 +42,14 @@ class Chandrayaan3
   end
 
   def turn_left
-    @direction = case @direction
-                 when 'N' then 'W'
-                 when 'E' then 'N'
-                 when 'S' then 'E'
-                 when 'W' then 'S'
+    @direction = case [@original_direction, @direction]
+                 when ['N', 'U'], ['N', 'N'] then 'W'
+                 when ['E', 'U'], ['E', 'E'] then 'N'
+                 when ['S', 'U'], ['S', 'S'] then 'E'
+                 when ['W', 'U'], ['W', 'W'] then 'S'
                  else @direction
                  end
+    @original_direction = @direction
   end
 
   def rotate_up
