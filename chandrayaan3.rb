@@ -21,10 +21,10 @@ class Chandrayaan3
 
   def turn_right
     @direction = case [@original_direction, @direction]
-                 when ['N', 'U'], ['N', 'N'] then 'E'
-                 when ['E', 'U'], ['E', 'E'] then 'S'
-                 when ['S', 'U'], ['S', 'S'] then 'W'
-                 when ['W', 'U'], ['W', 'W'] then 'N'
+                 when ['N', 'U'], ['N', 'N'], ['N', 'D'] then 'E'
+                 when ['E', 'U'], ['E', 'E'], ['E', 'D'] then 'S'
+                 when ['S', 'U'], ['S', 'S'], ['S', 'D'] then 'W'
+                 when ['W', 'U'], ['W', 'W'], ['W', 'D'] then 'N'
                  else @direction
                  end
     @original_direction = @direction
