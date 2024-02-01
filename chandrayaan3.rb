@@ -55,12 +55,12 @@ class Chandrayaan3
   end
 
   def rotate_up
-    @original_direction = @direction
+    @original_direction = @direction unless @direction == 'D'
     @direction = 'U'
   end
 
   def rotate_down
-    @original_direction = @direction
+    @original_direction = @direction unless @direction == 'U'
     @direction = 'D'
   end
 
