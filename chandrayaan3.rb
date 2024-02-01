@@ -61,4 +61,7 @@ class Chandrayaan3
     @original_direction = @direction
     @direction = 'D'
   end
+
+  def run
+  end
 end

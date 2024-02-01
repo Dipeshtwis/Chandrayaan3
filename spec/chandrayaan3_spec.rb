@@ -9,6 +9,18 @@ describe Chandrayaan3 do
     end
   end
 
+  describe '#run' do
+    it 'gets commands from UserInputHandler and executes them' do
+      user_input_handler = double('UserInputHandler')
+      spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
+
+      allow(UserInputHandler).to receive(:get_commands).and_return(['f', 'r', 'u'])
+      expect(UserInputHandler).to receive(:execute_commands).with(['f', 'r', 'u'], spacecraft)
+
+      spacecraft.run
+    end
+  end
+
   describe '#move_forward' do
     it 'moves forward in the north direction' do
       spacecraft = Chandrayaan3.new([0, 0, 0], 'N')
