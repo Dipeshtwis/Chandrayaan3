@@ -63,5 +63,7 @@ class Chandrayaan3
   end
 
   def run
+    commands = UserInputHandler.get_commands
+    UserInputHandler.execute_commands(commands, self)
   end
 end
