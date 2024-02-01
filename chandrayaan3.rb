@@ -1,3 +1,5 @@
+require_relative './user_input_handler'
+
 class Chandrayaan3
   attr_accessor :position, :direction, :original_direction
 
