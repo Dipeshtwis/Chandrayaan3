@@ -60,7 +60,7 @@ class Chandrayaan3
   end
 
   def rotate_down
-    @original_direction = @direction unless @direction == 'U'
+    @original_direction = @direction unless @direction == 'U' || @direction == 'D'
     @direction = 'D'
   end
 
